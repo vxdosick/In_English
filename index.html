@@ -8,9 +8,18 @@
     <title>In_English</title>
 </head>
 <body>
-    <div class="wrapper d-flex flex-column rounded-5">
-        <header class="rounded-top-5 bg-dark py-3">
-            <div class="container"></div>
+    <div class="wrapper d-flex flex-column rounded-5 my-5">
+        <header class="rounded-top-5 bg-dark py-4">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="text-light fs-5 fw-bold" href="#">In_English</a>
+                <nav>
+                    <ul class="d-flex gap-5 mb-0 ">
+                        <li><a class="text-light" href="#">Home</a></li>
+                        <li><a class="text-light" href="#">About</a></li>
+                        <li><a class="text-light" href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <main class="py-3 d-flex flex-column h-100">
             <div class="container mb-2 text-light">
@@ -21,17 +30,15 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="main__game row mb-2 d-flex justify-content-between">
-                    <div class="col-3 bg-warning">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium possimus at reprehenderit?</div>
-                    <div class="col-3 bg-warning">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium possimus at reprehenderit?</div>
-                    <div class="col-3 bg-warning">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium possimus at reprehenderit?</div>
+            <div class="bg-body-tertiary rounded-3 px-3 py-3 mt-4 d-flex container gap-5 px-0 align-items-center">
+                <button class="prev btn btn-outline-dark h-25"><</button>
+                <div class="overflow w-100 p-3 border border-dark rounded-3">
+                    <div class="container slider__container">
+                        <div class="slide">sdfsdf1</div>
+                        <div class="slide">sdfwedrhhtr2</div>
+                    </div>
                 </div>
-                <div class="main__game row d-flex justify-content-between">
-                    <div class="col-3 bg-warning">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium possimus at reprehenderit?</div>
-                    <div class="col-3 bg-warning">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium possimus at reprehenderit?</div>
-                    <div class="col-3 bg-warning">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium possimus at reprehenderit?</div>
-                </div>
+                <button class="btn btn-outline-dark next h-25">></button>
             </div>
         </main>
         <footer class="rounded-bottom-5 bg-dark py-3">
