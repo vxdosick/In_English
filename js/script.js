@@ -46,18 +46,18 @@ let wordArr = [
         "translation": "Карандаш"
     }
 ]
-wordArr.forEach((el)=> {
+wordArr.forEach((el, index)=> {
 let card = document.createElement("div")
 card.classList.add("slide__card")
 card.innerHTML = `
     <div>
-        <h3 class="text-center mb-4">${el.word}</h3>
+        <h3 class="text-center mb-4 word" data-translation="${el.translation}">${el.word}</h3>
         <p class="text-center blockquote-footer fs-5">${el.transcription}</p>
     </div>
     <div class="text-center">
-        <button class="btn btn-success">show</button>
+        <button class="btn btn-success translation__button">show</button>
     </div>
-`
+`;
 slideContainerCard.appendChild(card)
 })
 //--------------------
@@ -94,3 +94,13 @@ function changeSLidesCard() {
         elem.style.transform = `translateX(-${slideNumberCard * 100}%)`
     })
 }
+let translationButton = document.querySelectorAll(".translation__button")
+translationButton.forEach((el)=> {
+    el.addEventListener("click", (event)=> {
+        let clickedButton = event.target
+        let card = clickedButton.closest(".slide__card")
+        let word = card.querySelector(".word")
+        word.innerHTML = word.dataset.translation
+        console.log(word.dataset.translation);
+    })
+})
