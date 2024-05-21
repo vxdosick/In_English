@@ -27,6 +27,15 @@ body {
 	height: 100%;
 	transition: all 0.5s ease;
 }
+.slide__card {
+    position: absolute;
+	width: 100%;
+	transition: all 0.5s ease;
+    left: 0;
+}
+.slider__container-card {
+    overflow: hidden;
+}
 .wrapper {
     background-color: rgb(255, 255, 255);
     width: 1400px;

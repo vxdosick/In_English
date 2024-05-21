@@ -27,4 +27,70 @@ function changeSLides() {
         elem.style.transform = `translateX(-${slideNumber * 100}%)`
     })
 }
+//------------------------------
+let slideContainerCard = document.querySelector(".slider__container-card")
+let wordArr = [
+    {
+        "word": "Home",
+        "transcription": "houm",
+        "translation": "Дом"
+    },
+    {
+        "word": "Word",
+        "transcription": "word",
+        "translation": "Слово"
+    },
+    {
+        "word": "Pen",
+        "transcription": "pen",
+        "translation": "Карандаш"
+    }
+]
+wordArr.forEach((el)=> {
+let card = document.createElement("div")
+card.classList.add("slide__card")
+card.innerHTML = `
+    <div>
+        <h3 class="text-center mb-4">${el.word}</h3>
+        <p class="text-center blockquote-footer fs-5">${el.transcription}</p>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success">show</button>
+    </div>
+`
+slideContainerCard.appendChild(card)
+})
+//--------------------
+let slideCard = document.querySelectorAll(".slide__card")
+slideCard.forEach((el, index) => {
+    el.style.transform = `translateX(${index * 100}%)`
+})
 
+let prevCard = document.querySelector(".prev__card")
+let nextCard = document.querySelector(".next__card")
+
+let slideNumberCard = 0
+
+slideCard.forEach((elem, index)=> {
+    elem.style.left = `${index * 100}%`
+})
+
+prevCard.addEventListener("click", ()=> {
+    slideNumberCard--
+    changeSLidesCard()
+})
+nextCard.addEventListener("click", ()=> {
+    slideNumberCard++
+    changeSLidesCard()
+})
+function changeSLidesCard() {
+    if (slideNumberCard === slideCard.length) {
+        slideNumberCard = 0
+    }
+    if (slideNumberCard < 0) {
+        slideNumberCard = slideCard.length -1
+    }
+    slideCard.forEach((elem)=> {
+        elem.style.transform = `translateX(-${slideNumberCard * 100}%)`
+    })
+}
